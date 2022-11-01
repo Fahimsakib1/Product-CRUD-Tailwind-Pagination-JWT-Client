@@ -43,8 +43,8 @@ const ReadProducts = () => {
 
 
     return (
-        <div>
-            <h1 className="text-2xl font-bold text-center my-8">Total Products: {displayProducts.length}</h1>
+        <div className=''>
+            <h1 className="text-2xl font-bold text-center my-8 text-blue-800">Total Products: {displayProducts.length}</h1>
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12'>
                 {

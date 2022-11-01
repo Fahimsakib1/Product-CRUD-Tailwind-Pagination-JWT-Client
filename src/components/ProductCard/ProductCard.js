@@ -10,7 +10,7 @@ const ProductCard = ({ product, handleDeleteProduct }) => {
 
     return (
         <div>
-            <div className="card card-compact w-96 bg-base-100 shadow-xl mb-8">
+            <div className="card card-compact w-96 bg-base-100 shadow-2xl mb-8">
                 <figure><img src={photoURL} alt="Shoes" /></figure>
                 <div className="card-body">
                     <div className='flex justify-between'>
