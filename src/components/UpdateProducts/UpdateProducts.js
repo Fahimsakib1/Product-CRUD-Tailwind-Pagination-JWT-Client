@@ -29,10 +29,11 @@ const UpdateProducts = () => {
     const handleUpdateProduct = (event) => {
         event.preventDefault();
 
-        fetch (`http://localhost:5000/products/${_id}`, {
+        fetch (`https://product-crud-pagination-jwt-server.vercel.app/products/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('product-token')}`
             },
             body: JSON.stringify(selectedProduct)
         })
@@ -61,7 +62,7 @@ const UpdateProducts = () => {
 
             <h1 className='text-center text-2xl font-bold mb-3 text-blue-800 '> Your Chosen Product</h1>
             <div className="card card-compact w-96 bg-base-100 shadow-xl mb-8 mx-auto">
-                <figure><img src={photoURL} alt="Shoes" /></figure>
+                <figure><img src={photoURL} alt="Product Pic" /></figure>
                 <div className="card-body">
                     <div className='flex justify-between'>
                         <h2 className="card-title">{name}</h2>

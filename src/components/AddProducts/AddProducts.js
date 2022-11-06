@@ -3,7 +3,10 @@ import Swal from 'sweetalert2';
 
 const AddProducts = () => {
 
-    const [product, setProduct] = useState({})
+    const [product, setProduct] = useState([])
+
+    //ei vabe dileo hobe
+    // const [product, setProduct] = useState({})
 
     const handleInputBlur = (event) => {
         const inputFieldName = event.target.name;
@@ -20,10 +23,11 @@ const AddProducts = () => {
         event.preventDefault();
         console.log(product);
 
-        fetch('http://localhost:5000/products', {
+        fetch('https://product-crud-pagination-jwt-server.vercel.app/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('product-token')}`
             },
             body: JSON.stringify(product)
         })
@@ -51,10 +55,13 @@ const AddProducts = () => {
     }
 
 
+
+
     return (
         <div>
             <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-900 text-gray-100 mx-auto mb-24">
                 <h1 className="text-2xl font-bold text-center">Add Products</h1>
+                
                 <form onSubmit={handleAddProducts} className="space-y-6 ng-untouched ng-pristine ng-valid">
 
                     <div className="space-y-1 text-sm">

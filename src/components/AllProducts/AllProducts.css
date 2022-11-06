@@ -1,0 +1,7 @@
+.pagination .selected {
+    background-color: rgb(238, 182, 39);
+    border: gold;
+    font-weight: bold;
+    color: black;
+    width: 30px;
+}
